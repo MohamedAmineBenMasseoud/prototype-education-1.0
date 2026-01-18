@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bonjour Héros</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="preload" href="photos/mascote.png" as="image">
+</head>
+<body>
+  <div class="app">
+    <div class="card">
+      <img src="photos/etoile.png" alt="Étoile magique" class="star" loading="eager" fetchpriority="high">
+      <h1>Bonjour Héros ! 🌟</h1>
+      <img src="photos/mascote.png" alt="Mascotte héros" class="mascot" loading="eager" fetchpriority="high">
+      <p class="subtitle">Comment t'appelles-tu ?</p>
+      <input type="text" placeholder="Ton prénom..." />
+      <button id="startBtn" class="start-btn">
+  C'est parti ! 🚀
+      </button>
+    </div>
+  </div>
+  <script>
+  (function() {
+    const btn = document.getElementById("startBtn");
+    const card = document.querySelector(".card");
+    btn.addEventListener("click", () => {
+      card.classList.add("exit");
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          window.location.href = "home/home.html";
+        }, 600);
+      });
+    });
+  })();
+</script>
+</body>
+</html>

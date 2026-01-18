@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accueil - Héros</title>
+  <link rel="stylesheet" href="home.css">
+  <link rel="preload" href="../photos/mascote.png" as="image">
+  <link rel="preload" href="../photos/image de l'enfant.png" as="image">
+</head>
+<body>
+  <div class="app">
+    <img src="../photos/mascote.png" class="mascot" alt="Mascotte" loading="eager" fetchpriority="high">
+    <div class="avatar-section">
+      <img src="../photos/image de l'enfant.png" class="avatar" alt="Avatar enfant" loading="eager" fetchpriority="high">
+      <h1>Bonjour Héros 👋</h1>
+      <p>Bienvenue dans ton espace magique ✨<br>
+         Découvre ce que tu peux faire 👇</p>
+    </div>
+    <div class="carousel">
+      <div class="world-card active">
+        <img src="../photos/a_cute_colorful_educat.png" alt="Activités" loading="lazy">
+        <h3>🎯 Activités</h3>
+        <p>Joue et apprends chaque jour</p>
+      </div>
+      <div class="world-card">
+        <img src="../photos/recompenses.png" alt="Récompenses" loading="lazy">
+        <h3>🎁 Récompenses</h3>
+        <p>Gagne des badges magiques</p>
+      </div>
+      <div class="world-card">
+        <img src="../photos/progres.jpeg" alt="Progrès" loading="lazy">
+        <h3>🏆 Ton parcours</h3>
+        <p>Avance étape par étape</p>
+      </div>
+    </div>
+    <div class="hint">👇 Appuie pour commencer</div>
+    <a href="../missions/missions.html">
+      <button class="main-btn">
+        🚀 Commencer l'aventure !
+      </button>
+    </a>
+  </div>
+  <script>
+    (function() {
+      const cards = document.querySelectorAll(".world-card");
+      let index = 0;
+      let intervalId = null;
+      function nextCard() {
+        cards[index].classList.remove("active");
+        index = (index + 1) % cards.length;
+        cards[index].classList.add("active");
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+          intervalId = setInterval(nextCard, 3500);
+        });
+      } else {
+        intervalId = setInterval(nextCard, 3500);
+      }
+      document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+          if (intervalId) clearInterval(intervalId);
+        } else {
+          if (!intervalId) intervalId = setInterval(nextCard, 3500);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

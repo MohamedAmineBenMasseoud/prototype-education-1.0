@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mes Super Missions</title>
+  <link rel="stylesheet" href="missions.css">
+</head>
+<body>
+<div class="app">
+  <header class="header">
+    <img src="../photos/MES SUPER MISSIONS.png" class="header-img" alt="Mes Super Missions">
+  </header>
+  <div class="avatar-fullscreen" id="avatarFullscreen">
+    <img id="avatar" src="../photos/Avatar normal.jpeg" alt="Avatar">
+  </div>
+  <div class="progress-wrapper">
+    <div class="progress-avatar">
+      <img id="avatar" src="../photos/Avatar normal.jpeg" alt="Avatar">
+    </div>
+    <div class="progress-info">
+      <p><span id="count">0</span> / 3 missions complétées</p>
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+    </div>
+  </div>
+  <section class="missions">
+
+    <div class="mission-card" data-points="20">
+      <img src="../photos/Arroser les plantes.jpeg" alt="Mission Arroser les plantes">
+      <h3>Arroser les plantes</h3>
+      <p>Prends soin des plantes</p>
+      <div class="mission-actions">
+        <span>⭐ +20</span>
+        <button class="camera-btn">
+          <img src="../photos/camera.jpeg" alt="Caméra">
+        </button>
+      </div>
+    </div>
+    <div class="mission-card" data-points="15">
+      <img src="../photos/Lire 15 minutes.png" alt="Mission Lire 15 minutes">
+      <h3>Lire 15 minutes</h3>
+      <p>Lis un livre calmement</p>
+      <div class="mission-actions">
+        <span>⭐ +15</span>
+        <button class="camera-btn">
+          <img src="../photos/camera.jpeg" alt="Caméra">
+        </button>
+      </div>
+    </div>
+    <div class="mission-card" data-points="25">
+      <img src="../photos/Trier les déchets.jpeg" alt="Mission Trier les déchets">
+      <h3>Trier les déchets</h3>
+      <p>Protège la planète</p>
+      <div class="mission-actions">
+        <span>⭐ +25</span>
+        <button class="camera-btn">
+          <img src="../photos/camera.jpeg" alt="Caméra">
+        </button>
+      </div>
+    </div>
+  </section>
+  <div class="camera-container" id="cameraContainer">
+    <video id="camera" width="100%" height="auto" autoplay></video>
+    <button class="camera-capture-btn" id="captureBtn">Prendre la photo</button>
+    <canvas id="canvas" style="display: none;"></canvas>
+  </div>
+</div>
+<script src="missions.js"></script>
+</body>
+</html>
